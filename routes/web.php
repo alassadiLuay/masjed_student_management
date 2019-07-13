@@ -65,6 +65,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::get('/admin/students/student_numbers',                               'Admin\StudentController@student_numbers');
     Route::post('/admin/upload_student',                               'Admin\StudentController@upload_student');
     Route::get('/admin/whatsapp',                               'Admin\WhatsappController@index');
+    Route::get('/admin/whatsapp/multiCast',                               'Admin\WhatsappController@multiCast');
     Route::get('/admin/students/student_json',                               'Admin\StudentController@student_json');
     Route::get('/admin/students/create',                        'Admin\StudentController@create');
     Route::post('/admin/students',                              'Admin\StudentController@store');
@@ -263,6 +264,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::get('/admin/student-attendances/create',             'Admin\StudentAttendancesController@create');
     Route::post('/admin/student-attendances',                   'Admin\StudentAttendancesController@store');
     Route::post('/admin/whatsapp/send_message',                   'Admin\WhatsappController@send_message');
+    Route::post('/admin/whatsapp/send_multi_message',                   'Admin\WhatsappController@send_multi_message');
     Route::get('/admin/student-attendances/{studentAttendance}/edit','Admin\StudentAttendancesController@edit')->name('admin/student-attendances/edit');
     Route::post('/admin/student-attendances/{studentAttendance}','Admin\StudentAttendancesController@update')->name('admin/student-attendances/update');
     Route::delete('/admin/student-attendances/{studentAttendance}','Admin\StudentAttendancesController@destroy')->name('admin/student-attendances/destroy');
@@ -271,6 +273,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
     Route::get('/admin/student-points',                         'Admin\StudentPointsController@index');
+    Route::get('/admin/student-points/report',                         'Admin\StudentPointsController@report');
     Route::get('/admin/student-points/create',                  'Admin\StudentPointsController@create');
     Route::post('/admin/student-points',                        'Admin\StudentPointsController@store');
     Route::get('/admin/student-points/{studentPoint}/edit',     'Admin\StudentPointsController@edit')->name('admin/student-points/edit');

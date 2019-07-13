@@ -19,7 +19,7 @@
                             <div class="col">
                                 <h4> إرسال رسالة عبر  whatsapp </h4>
                             </div>
-                            <form method="POST" action="{{ url('admin/whatsapp/send_message') }}" style="width: 100%;">
+                            <form method="POST" v-on:keydown.enter.prevent='addCategory' action="{{ url('admin/whatsapp/send_message') }}" style="width: 100%;">
                                  @csrf
                                 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('note'), 'has-success': this.fields.note && this.fields.note.valid }" style="margin-right: 15px;">
                                     <label for="message" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">الرسالة</label>

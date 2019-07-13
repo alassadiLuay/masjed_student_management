@@ -84,6 +84,7 @@
         <i class="nav-icon icon-book-open"></i>Whatsapp رسائل</a>    
        <ul class="collapse  <?php if(isset($whatsappSubmenu)) echo "show";?>  list-unstyled" id="whatsappSubmenu">
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/whatsapp') }}" style="margin-left: 15px;"><i class="nav-icon icon-phone"></i> whatsapp </a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/whatsapp/multiCast') }}" style="margin-left: 15px;"><i class="nav-icon icon-phone"></i> advanced whatsapp </a></li>
       </ul>
     </li>
 <!--            <li class="nav-item"><a class="nav-link" href="{{ url('admin/admin_users') }}"><i class="nav-icon icon-book-open"></i> {{ trans('admin.admin_users.title') }}</a></li> -->
