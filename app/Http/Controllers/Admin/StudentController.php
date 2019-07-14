@@ -1,4 +1,5 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php
+namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
@@ -238,19 +239,21 @@ class StudentController extends Controller
               }
               fclose($file);
               // Insert to MySQL database
-              foreach($importData_arr as $importData){
+              for($i = 1; $i < count($importData_arr); $i++){
+                $importData = $importData_arr[$i];
                 //var_dump($importData);
                 $insertData = array(
-                   "student_fname" => $importData[1],
-                    "student_lname" => $importData[2],
-                    "student_father_job" => $importData[3],
-                    "student_birthdate" => date("Y-m-d",strtotime( $importData[4])),
-                    "student_nationality" => $importData[5],
-                    "school_name" => $importData[6],
-                    "father_phone" => $importData[7],
-                    "student_phone" => $importData[8],
-                    "home_phone" => $importData[9],
-                    "student_address" => $importData[10]
+                   "student_fname" => $importData[0],
+                    "student_lname" => $importData[1],
+                    "student_father_job" => $importData[2],
+                    "student_birthdate" => date("Y-m-d",strtotime( $importData[3])),
+                    "student_nationality" => $importData[4],
+                    "school_name" => $importData[5],
+                    "father_phone" => $importData[6],
+                    "student_phone" => $importData[7],
+                    "home_phone" => $importData[8],
+                    "student_address" => $importData[9],
+                    "transportation" => $importData[10],
                 );
                 if(isset($importData[11]))
                     $insertData["note"] = $importData[11];

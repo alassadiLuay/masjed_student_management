@@ -315,13 +315,13 @@ class StudentAttendancesController extends Controller
             $message = "السلام عليكم ورحمة الله وبركاته \n";
             $message .= " لم يحضر الطالب  ".$item->student_fname ." ".$item->student_lname." \n";
             $message .= "تاريخ ".$newDate." \n";
-            $message .= " إدارة مسجد بدر \n";
+            $message .= " إدارة مسجد الشمسية \n";
           }
         else{
             $message = "السلام عليكم ورحمة الله وبركاته \n";
             $message .= "نود إعلامكم بحضور الطالب ".$item->student_fname ." ".$item->student_lname." \n";
             $message .= "تاريخ ".$newDate." \n";
-            $message .= "إدارة مسجد بدر  ";
+            $message .= "إدارة مسجد الشمسية  ";
         }
         $number1 = $item->father_phone;
         $number2 = $item->student_phone;

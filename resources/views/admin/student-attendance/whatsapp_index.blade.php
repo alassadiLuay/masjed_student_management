@@ -128,12 +128,12 @@
                                             السلام عليكم ورحمة الله وبركاته<br>
                                             لم يحضر الطالب  @{{ item.student_fname }} @{{item.student_lname}}<br>
                                             تاريخ {{Date("d-m-Y")}}<br>
-                                            إدارة مسجد بدر
+                                            إدارة مسجد الشمسية
                                         <?php else: ?>
                                             السلام عليكم ورحمة الله وبركاته<br>
                                             نود إعلامكم بحضور الطالب @{{ item.student_fname }} @{{item.student_lname}}<br>
                                             اليوم تاريخ @{{item.created_at}}<br>
-                                            إدارة مسجد بدر     
+                                            إدارة مسجد الشمسية     
                                         <?php endif; ?> 
                                     </td>
                                 </tr>

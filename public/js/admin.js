@@ -109823,7 +109823,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Luay\Documents\projects\laravel-bader\resources\js\admin\admin.js */"./resources/js/admin/admin.js");
+module.exports = __webpack_require__(/*! C:\xampp\php\www\masjed_student_management\resources\js\admin\admin.js */"./resources/js/admin/admin.js");
 
 
 /***/ })

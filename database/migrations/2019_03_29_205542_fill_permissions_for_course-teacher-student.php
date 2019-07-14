@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 
-class FillPermissionsForCourseStudent extends Migration
+class FillPermissionsForCourseTeacherStudent extends Migration
 {
     /**
      * @var  \Illuminate\Config\Repository|mixed
