@@ -60,3 +60,17 @@ Vue.component('student-point-form', {
     }
 
 });
+
+Vue.component('student-report-form', {
+    mixins: [AppForm],
+    components: {
+	    Multiselect
+	  },
+    data: function() {
+        return {
+            options: [],
+            students_data: [],
+            points_data: []
+        }
+    }
+});

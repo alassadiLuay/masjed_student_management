@@ -75,6 +75,10 @@ class StudentPointsController extends Controller
 
     }
 
+    public function report(){
+        return view('admin.student-point.report');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -220,7 +220,6 @@ class StudentController extends Controller
 
               $importData_arr = array();
               $i = 0;
-              header('Content-Type: text/html; charset=UTF-8');
               while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
                  $num = count($filedata );
                  
@@ -232,7 +231,7 @@ class StudentController extends Controller
                  //$filedata = array_map("utf8_encode", $filedata);
                  for ($c=0; $c < $num; $c++) {
                     //$importData_arr[$i][] = $filedata [$c];
-                    $importData_arr[$i][] = mb_strtolower($filedata [$c], 'UTF-8');;
+                    $importData_arr[$i][] = $filedata [$c];
                  }
                  $i++;
               }
@@ -241,23 +240,24 @@ class StudentController extends Controller
               foreach($importData_arr as $importData){
                 //var_dump($importData);
                 $insertData = array(
-                   "student_fname" => $importData[1],
-                    "student_lname" => $importData[2],
-                    "student_father_job" => $importData[3],
+                   "student_fname" => chr(239) . chr(187) . chr(191) .$importData[1],
+                    "student_lname" => chr(239) . chr(187) . chr(191) .$importData[2],
+                    "student_father_job" => chr(239) . chr(187) . chr(191) .$importData[3],
                     "student_birthdate" => date("Y-m-d",strtotime( $importData[4])),
-                    "student_nationality" => $importData[5],
-                    "school_name" => $importData[6],
-                    "father_phone" => $importData[7],
-                    "student_phone" => $importData[8],
-                    "home_phone" => $importData[9],
-                    "student_address" => $importData[10]
+                    "student_nationality" => chr(239) . chr(187) . chr(191) .$importData[5],
+                    "school_name" => chr(239) . chr(187) . chr(191) .$importData[6],
+                    "father_phone" => chr(239) . chr(187) . chr(191) .$importData[7],
+                    "student_phone" => chr(239) . chr(187) . chr(191) .$importData[8],
+                    "home_phone" => chr(239) . chr(187) . chr(191) .$importData[9],
+                    "student_address" => chr(239) . chr(187) . chr(191) .$importData[10]
                 );
                 if(isset($importData[11]))
-                    $insertData["note"] = $importData[11];
+                    $insertData["note"] = chr(239) . chr(187) . chr(191) .$importData[11];
 /*                header('Content-Encoding: UTF-8');
 header('Content-type: text/csv; charset=UTF-8');
                 var_dump($insertData);   
                 die(); */
+                //var_dump($insertData);   
                 $student = Student::create($insertData);
               }
               //die();
